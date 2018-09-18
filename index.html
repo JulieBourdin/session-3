@@ -8,10 +8,10 @@
     <h1>Sommaire</h1>
     <ul>
       <li>
-        <a href="chapitres/chapitre-1.html">Chapitre 1</a>
+        <a href="chapitres/chapitre-1.html" target="_blank" >Chapitre 1</a>
       </li>
       <li>
-        <a href="chapitres/chapitre-2.html">Chapitre 2</a>
+        <a href="chapitres/chapitre-2.html" target="_blank">Chapitre 2</a>
       </li>
       <li>
         <a href="chapitres/chapitre-3.html">Chapitre 3</a>
@@ -20,13 +20,51 @@
         <a href="chapitres/chapitre-4.html">Chapitre 4</a>
       </li>
     </ul>
-    <p>
-      Aliquam erat volutpat. Morbi gravida velit nisl. Duis facilisis aliquam nisi,
-      ut auctor metus. Curabitur ex diam, mollis at odio sit amet, posuere hendrerit massa.
-      Cras mi nisl, gravida quis orci sed, consequat sagittis est.<br />
+     <title>Ma galerie photo</title>
+    <!-- Les fichiers CSS qui donnent un peu de style à notre page. Attention ce
+    fichier CSS est hebergé "ailleurs" est référencé avec un chemin absolu -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  </head>
+  <body>
+ <div class="container my-4">
+      <h1>Ma galerie photo</h1>
+       <!-- Ce block avec pour id "app" sert à créer une galerie -->
+      <div id="app">
+        <carousel-3d>
+          <!-- Pour ajouter une photo à cette galerie il faut ajouter une
+          balise <slide> contenant une <img>. Chaque slide doit avoir
+          un index different. -->
+          <slide :index="0">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/81KRibO4f5L._SL1453_.jpg" />
+          </slide>
+          <slide :index="1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAT07vIFxUWhgMfZzxILhhWQKVrrXdgPk2X7Ffy4Ke0FoJWjn4" />
+          </slide>
+          <slide :index="2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb2CVNM1gscTLJMYqIuJr7bZgGnBRtkaQd98V3CcIDgAROtvet" />
+          </slide>
+          <slide :index="3">
+            <img src=https://vignette.wikia.nocookie.net/happyfeet/images/2/24/Ramon_from_Penguin_Tile_Remix.PNG/revision/latest?cb=20141023025330" />
+          </slide>
+        </carousel-3d>
+      </div>
+    </div>
 
-      <a href="images/penguin.jpg" target="_blank">
-        <img src="images/penguin-mini.jpg" alt="Un bébé manchot sur la banquise" />
+    <!-- Les fichiers javascript qui permettent au carousel de fonctionner. Ces
+    fichier JS sont référencés avec des chemins relatifs. Si vous devez les référencer
+    dans un fichier depuis un autre dossier, pensez à mettre à jour ces chemins. -->
+    <script src="vendors/vue.min.js"></script>
+    <script src="vendors/vue-carousel-3d.min.js"></script>
+    <script src="gallery.js"></script>
+  </body>
+</html>
+
+    <p>
+      Le film Happy Feet, sorti en 2006, a popularisé les pingouins dans l'imaginaire mondial. L'histoire : au pays des pingouins Empereurs, où les âmes soeurs se rencontrent par le chant, un jeune pingouin naît sans aucune oreille musicale. Quelle tragédie ! Mais le jeune personnage a un talent caché : des talents de danseur inégalés.
+      <br />
+
+      <a href="images/pingouin.jpeg" target="_blank">
+        <img src="images/pingouin.jpeg" alt="Un bébé manchot sur la banquise" />
       </a>
     </p>
 
